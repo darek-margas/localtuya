@@ -71,7 +71,7 @@ class LocaltuyaNumber(LocalTuyaEntity, NumberEntity):
         """Return the class of this device."""
         return self._config.get(CONF_DEVICE_CLASS)
 
-    async def async_set_value(self, value: float) -> None:
+    async def async_set_native_value(self, value: float) -> None:
         """Update the current value."""
         await self._device.set_dp(value, self._dp_id)
 
